@@ -11,8 +11,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/",
-    "deploy": "yarn build && gh-pages -d dist"
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "@primevue/themes": "^4.3.7",
