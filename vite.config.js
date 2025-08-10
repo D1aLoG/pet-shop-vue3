@@ -6,6 +6,7 @@ import Components from 'unplugin-vue-components/vite'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig(({ mode }) => {
+  // eslint-disable-next-line no-undef
   const env = loadEnv(mode, process.cwd(), '')
 
   return {

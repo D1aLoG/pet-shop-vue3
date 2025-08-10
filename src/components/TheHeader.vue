@@ -9,16 +9,28 @@
       </router-link>
 
       <div class="flex items-center gap-4">
-        <router-link to="/favorites" class="relative rounded-full p-2 text-slate-600 transition hover:bg-slate-100 hover:text-purple-600">
+        <router-link
+          to="/favorites"
+          class="relative rounded-full p-2 text-slate-600 transition hover:bg-slate-100 hover:text-purple-600"
+        >
           <vue-feather type="heart" />
-          <span v-if="favoritesCounter > 0" class="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-purple-600 text-xs font-bold text-white">
+          <span
+            v-if="favoritesCounter > 0"
+            class="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-purple-600 text-xs font-bold text-white"
+          >
             {{ favoritesCounter }}
           </span>
         </router-link>
 
-        <router-link to="/cart" class="relative rounded-full p-2 text-slate-600 transition hover:bg-slate-100 hover:text-purple-600">
+        <router-link
+          to="/cart"
+          class="relative rounded-full p-2 text-slate-600 transition hover:bg-slate-100 hover:text-purple-600"
+        >
           <vue-feather type="shopping-cart" />
-          <span v-if="cartCounter > 0" class="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-purple-600 text-xs font-bold text-white">
+          <span
+            v-if="cartCounter > 0"
+            class="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-purple-600 text-xs font-bold text-white"
+          >
             {{ cartCounter }}
           </span>
         </router-link>
@@ -35,11 +47,11 @@ import { useCart } from '@/stores/cartProducts.js';
 export default {
   computed: {
     ...mapState(useFavorites, {
-      favoritesCounter: 'counter'
+      favoritesCounter: 'counter',
     }),
     ...mapState(useCart, {
-      cartCounter: 'counter'
-    })
-  }
+      cartCounter: 'counter',
+    }),
+  },
 };
 </script>

@@ -3,10 +3,10 @@ import { acceptHMRUpdate, defineStore } from 'pinia';
 export const useFavorites = defineStore('favorites', {
   state: () => ({
     pending: true,
-    products: []
+    products: [],
   }),
   getters: {
-    counter: (state) => state.products.length
+    counter: (state) => state.products.length,
   },
   actions: {
     getData() {
@@ -25,8 +25,8 @@ export const useFavorites = defineStore('favorites', {
         this.products.splice(index, 1);
       }
       localStorage.setItem('favorites', JSON.stringify(this.products));
-    }
-  }
+    },
+  },
 });
 
 if (import.meta.hot) {

@@ -2,6 +2,6 @@ export default [
   {
     path: '/product/:id',
     name: 'product-item',
-    component: () => import('@/views/product/ProductView.vue')
-  }
+    component: () => import('@/views/product/ProductView.vue'),
+  },
 ];

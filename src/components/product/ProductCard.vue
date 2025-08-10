@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="`/product/${item.id}`"
-    class="flex flex-col overflow-hidden rounded-xl bg-white text-black shadow-md transition-shadow duration-300 hover:shadow-xl hover:-translate-y-1"
+    class="flex flex-col overflow-hidden rounded-xl bg-white text-black shadow-md transition-shadow duration-300 hover:-translate-y-1 hover:shadow-xl"
   >
     <div class="relative">
       <img class="h-80 w-full object-cover" :src="item.image" alt="Картинка товара" />
@@ -35,28 +35,28 @@
 </template>
 
 <script>
-import { mapActions } from 'pinia'
-import { useFavorites } from '@/stores/favoritesProducts.js'
-import { useCart } from '@/stores/cartProducts.js'
+import { mapActions } from 'pinia';
+import { useFavorites } from '@/stores/favoritesProducts.js';
+import { useCart } from '@/stores/cartProducts.js';
 
 export default {
   props: {
     item: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
 
   data() {
     return {
-      isFavoriteLocal: this.item.isFavorite
+      isFavoriteLocal: this.item.isFavorite,
     };
   },
 
   watch: {
     'item.isFavorite'(newValue) {
       this.isFavoriteLocal = newValue;
-    }
+    },
   },
 
   methods: {
@@ -66,11 +66,9 @@ export default {
     handleFavoriteClick() {
       this.isFavoriteLocal = !this.isFavoriteLocal;
       this.toggleFavorite(this.item);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

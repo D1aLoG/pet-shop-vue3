@@ -19,11 +19,11 @@ export default {
   components: { TheFooter, TheHeader },
   methods: {
     ...mapActions(useFavorites, ['getData']),
-    ...mapActions(useCart, ['getDataCart'])
+    ...mapActions(useCart, ['getDataCart']),
   },
   mounted() {
     this.getData();
     this.getDataCart();
-  }
+  },
 };
 </script>

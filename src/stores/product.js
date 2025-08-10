@@ -4,7 +4,7 @@ import { getProduct } from '@/api/products.js';
 export const useProduct = defineStore('product', {
   state: () => ({
     pending: true,
-    product: null
+    product: null,
   }),
   actions: {
     async getData(id) {
@@ -18,8 +18,8 @@ export const useProduct = defineStore('product', {
       } finally {
         this.pending = false;
       }
-    }
-  }
+    },
+  },
 });
 
 if (import.meta.hot) {
