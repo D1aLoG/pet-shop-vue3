@@ -1,0 +1,1 @@
+import{_ as o,c as t,o as e}from"./index-C2ccw7wI.js";const s={},c={class:"mr-auto mb-3 text-[36px] font-bold"};function n(r,a,_,p,d,f){return e(),t("h1",c,"Упс, такой страницы нет")}const l=o(s,[["render",n]]);export{l as default};
