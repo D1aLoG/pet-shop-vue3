@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import home from './routes/home.js';
 import favorites from './routes/favorites.js';
 import cart from './routes/cart.js';
@@ -6,7 +6,7 @@ import product from './routes/product.js';
 import checkout from './routes/checkout.js';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     ...home,
     ...favorites,
