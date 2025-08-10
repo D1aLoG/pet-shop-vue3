@@ -1,16 +1,9 @@
 import axios from 'axios';
 
-const isProduction = import.meta.env.PROD;
-const backendApiUrl = import.meta.env.VITE_BASE_API;
-const proxyPath = import.meta.env.VITE_API_PROXY_PATH;
-
-const baseURL = isProduction ? backendApiUrl : proxyPath;
-
-console.log(`Running in ${isProduction ? 'Production' : 'Development'} mode.`);
-console.log('Axios baseURL has been set to:', baseURL);
+const BASE_API = import.meta.env.VITE_API_PROXY_PATH;
 
 const service = axios.create({
-  baseURL: baseURL
+  baseURL: BASE_API,
 });
 
 service.interceptors.response.use(
