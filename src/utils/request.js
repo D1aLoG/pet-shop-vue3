@@ -1,19 +1,33 @@
 import axios from 'axios';
 
-const BASE_API = import.meta.env.VITE_API_PROXY_PATH;
+const BASE_API = import.meta.env.VITE_BASE_API;
 
 const service = axios.create({
   baseURL: BASE_API,
 });
 
-service.interceptors.response.use(
-  (response) => {
-    return response.data;
+service.interceptors.request.use(
+  (config) => {
+    const conf = config;
+
+    conf.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+
+    return conf;
   },
   (error) => {
-    console.error('Axios request failed:', error);
-    return Promise.reject(new Error(error));
+    Promise.reject(error);
+  }
+);
+
+service.interceptors.response.use(
+  (response) => {
+    const { data } = response;
+
+    return data;
   },
+  (error) => {
+    Promise.reject(new Error(error));
+  }
 );
 
 export default service;

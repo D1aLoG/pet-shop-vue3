@@ -23,14 +23,5 @@ export default defineConfig(({ mode }) => {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
     },
-    server: {
-      proxy: {
-        [env.VITE_API_PROXY_PATH]: {
-          target: env.VITE_BASE_API,
-          changeOrigin: true,
-          rewrite: (path) => path.replace(new RegExp(`^${env.VITE_API_PROXY_PATH}`), '')
-        }
-      }
-    }
   }
 })
